@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -27,15 +28,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+            // validar email aqui
+        $user = User::create([
 
+            'email' => $request->email,
+            'password' => \Hash::make($request->password)
+        ]);
+        return $user;
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    }
     public function show($id)
     {
         //

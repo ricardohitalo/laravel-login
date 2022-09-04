@@ -185,6 +185,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -195,7 +197,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
 
     ],
